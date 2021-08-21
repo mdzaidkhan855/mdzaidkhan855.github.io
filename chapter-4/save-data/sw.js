@@ -19,6 +19,7 @@ self.addEventListener('install', event => {
 
 // Cache any new resources as they are fetched
 self.addEventListener('fetch', function(event) {
+	console.log('inside addEventListner');
 	if(event.request.headers.get('save-data')){
 			 // We want to save data, so restrict icons and fonts
 			 if (event.request.url.includes('fonts.googleapis.com')) {
