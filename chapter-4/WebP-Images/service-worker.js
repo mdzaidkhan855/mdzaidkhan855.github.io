@@ -3,7 +3,7 @@
 
 // Listen to fetch events
 self.addEventListener('fetch', function(event) {
-
+	alert('hi');
   // Check if the image is a jpeg
   if (/\.jpg$|.png$/.test(event.request.url)) {
 
