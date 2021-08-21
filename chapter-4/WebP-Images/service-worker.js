@@ -14,7 +14,7 @@ self.addEventListener('fetch', function(event) {
         .get('accept')
         .includes('webp');
     }
-
+	console.log('inside chapter 4');
     // If we support WebP
     if (supportsWebp) {
       // Clone the request
