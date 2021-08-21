@@ -22,7 +22,7 @@ self.addEventListener('fetch', function(event) {
 
       // Build the return URL
       var returnUrl = req.url.substr(0, req.url.lastIndexOf(".")) + ".webp";
-		console.log(' Return URL is: ' + returnUrl);
+		console.log(' Return URL is: ', returnUrl);
       event.respondWith(
         fetch(returnUrl, {
           mode: 'no-cors'
