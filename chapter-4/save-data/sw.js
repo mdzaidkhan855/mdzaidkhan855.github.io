@@ -19,6 +19,15 @@ self.addEventListener('install', event => {
 
 // Cache any new resources as they are fetched
 self.addEventListener('fetch', function(event) {
+	if(event.request.headers.get('save-data')){
+			 // We want to save data, so restrict icons and fonts
+			 if (event.request.url.includes('fonts.googleapis.com')) {
+			 // return nothing
+			 event.respondWith(new Response('', {status: 417, statusText: 'Ignore	fonts to save data.' }));
+		}
+	 }
+	else{
+			
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true })
     .then(function(response) {
@@ -43,5 +52,5 @@ self.addEventListener('fetch', function(event) {
         }
       );
     })
-  );
+		)};
 });
