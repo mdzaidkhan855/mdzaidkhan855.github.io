@@ -78,7 +78,7 @@
                     btoa(String.fromCharCode.apply(null, new Uint8Array(rawAuthSecret))) : '';
 
                   endpoint = subscription.endpoint;
-
+					console.log('DEBUG: Endpoint is : ' + endpoint);
                   return fetch('register', {
                     method: 'post',
                     headers: new Headers({
