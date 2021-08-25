@@ -63,7 +63,7 @@
                 // We already have a subscription, let's not add them again
                 return;
               }
-
+				console.log('DEBUG: no Subscription');
               return registration.pushManager.subscribe({
                   userVisibleOnly: true,
                   applicationServerKey: determineAppServerKey()
