@@ -34,7 +34,7 @@ self.addEventListener('fetch', function(event) {
 
   // Check for the googleapis domain
   if (/googleapis/.test(event.request.url)) {
-    return event.respondWith(Promise.race([timeout(1000),fetch(event.request.url)]));
+    return event.respondWith(Promise.race([timeout(100),fetch(event.request.url)]));
   }
 
   // Else process all other requests as expected
